@@ -1,0 +1,11 @@
+services:
+  email-sync:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    volumes:
+      - ./.env:/usr/local/bin/.env
+    container_name: email-sync-service
+    restart: unless-stopped
